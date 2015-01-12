@@ -1,0 +1,88 @@
+31 Oct 2000
+Umut Gökbayrak
+Version : 1.1.1
+---------------------------
+POSTACI FAQ
+
+When I log in to my account I sometimes see somebody else' s mailbox and even can read his/her e-mails.
+This was a (and the first) security hole in version 1.1.0. By version 1.1.1, this will never happen again.
+
++ Is Postaci a secure environment?
+Postaci has only one vulnerability since it is being developed (see above). This doesn' t mean that it is impossible to gain unauthorized access but a lot of effort is spent to make Postaci as secure as possible.
+
++ I have x many users. Will Postaci be able to handle these?
+Postaci is being used in large scale universities and ISP' s. In real life environment, Postaci can server more than 40.000 users on a single CPU Pentium III with >= 128M RAM.
+
++ I installed Postaci and everything seemed OK. When I try to log in I get a blank screen containing no data. What' s wrong?
+It means that something is wrong with your installation or and IMAP stream can not be established. There mainly three reasons for this.
+
+1. You haven' t got PHP installed correctly. Follow the steps at doc/INSTALL file carefully and make sure that c-client library is also included as a module.
+2. Your IMAP server is not compatible or is not currently up and working. Try to use another mail application and if you are sure that it is working comment out the (put two slashes before it) error_reporting(32); value in includes/global.inc and try to log in again. There should be an error/warning message indicating what' s wrong.
+3. One or more variables in includes/global.inc file is invalid. Do not forget all path names need a tailing slash. If you are using Windows back slashes needed to be double.
+
++ Does Postaci has theme or WAP support?
+Well, currently not. It is in TODO list and thought to be implemented by version 2.0.0. WAP support may come earlier.
+
++ Postaci isn' t working with my non-javascript aware browser.
+You are right. With a non-javascript browseryou can read messages but you can' t send messages, because these scripts require javascripts.
+
++ Postaci stores passwords in the database unencrypted. Isn' t it a secure hole?
+I am not an expert on encryption algorithms. I either don' t want to use PHP supplied encryption functions because they require additinonal libraries to be compiled in. Moreover it seems really hard to compile both c-client and those libraries for the avarage user. Although, encrypting the passwords doesn't seem to make any troubles, I am trying to  implement it some way. Any help will be appreciated.
+
++ If you want to make Postaci secure as possible follow these simple steps.
+
+1. Run httpd with a user which you will never use at any other purpose.  (Ex : nobody)
+2. create a mysql user which is the only one to access Postaci database and assign a hard to guess password to it. (ex : dbuser with password 76jk!^&3.FS)
+3. change the permissions of the includes/global.inc file to 600 and the owner to nobody (the httpd user)
+4. THIS STEP IS IMPORTANT !!!! define .inc extension as a php file extension in your httpd.conf file. This is done by adding the following line to your httpd.conf file.    AddType application/x-httpd-php .inc
+5. If possible use web, SMTP, POP3/IMAP, DATABASE server with Postaci on the same server.
+6. Change the permissions to 700 and the owner to nobody for the directories you defined in includes/global.inc file.
+
++ What are those tables in the default database?
+TblUsers : It stores the users' information. The unique ID is a auto incremented ID and it is used as a foreign key in many other tables.
+TblDomains : It stores the virtual domains on the server. Every domain has an ID and it is unique for that domain.
+TblUserDomains : This table is the one that gives the virtual hosting capability. It has two fields. One is, user_id and the other is the domain_id. If you want to attach a username with a domain name, you simply give the information here. If the user is not tied with a domain in this table the domain with the unique ID = 1 will be defaulted.
+TblMessages : If you are using POP3 mode, Postaci uses database fields to give the user the folder capability. It fetches, decodes and stores messages in a secure way in this table.
+TblAttachments : In POP3 mode, the attachments are fetched, referenced with the message and stored on the physical disk structure. This table gives appropriate information about the attachment.
+TblLoggedUsers : This table is the log database. If any users logs in to the system, it is logged and in every page the user wants to acces to log and the session ID is compared to make sure that user is authorized.
+
++ How can I use virtual hosting feauture?
+This feature still requires some little database knowledge so please be patient while I am developing a system administration console for Postaci. By version 1.1.x you need to do some SQL exercise to have a virtual hosting capable Postaci Webmail system. All you need to do is explained below.
+
+1. Add the domain to the tblDomains table and give it the ID of maximum + 1.
+
+# mysql postaci -u root -p
+mysql > select  max(domain_id) from tblDomains;
++----------------+
+| max(domain_id) |
++----------------+
+|      13        |
++----------------+
+1 row in set (0.00 sec)
+
+mysql > insert into tblDomains values(14,"newdomain.com");
+                                      ^^
+2. Do not forget the ^new domain' s ID number. (maximum + 1).
+3. When a new user will be attached with this domain simply add the appropriate record to the tblUserDomains table.
+NOTICE : This process should be done before the user logs in to the system for the
+first time.
+
+# mysql postaci
+mysql > insert into tblUserDomains values ("umutgokbayrak",14);
+
+4. Pay attention that we used the same domain_id which we used in the first query. After this time you can create the user account and the user is free to log in to the system.
+
+NOTE : The account needn' t be available on both tblUsers and the Unix/Linux/Windows machine. TblLoggedUsers is just a referance to the username when it is needed. It is used to tie user_id' s with domain_id's.
+
++ Can use have remote SMTP and POP3/IMAP servers to fetch and send mail?
+Yes you can. Simply edit the appropriate fields in includes/global.inc file.
+
++ I tried so many times to install PHP + c-client and apache combination but I wasn' t successfull. Can you help me?
+Maybe...
+
++ Is any professional support available?
+Postaci is a GPL' ed software so you are able to use it on your purposes the way you like. If you need professional support, very little or no charge may be asked for.
+
++ I want to sell/redistribute Postaci Webmail.
+See docs/LICENSE for details.
+

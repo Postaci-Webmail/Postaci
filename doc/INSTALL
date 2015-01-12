@@ -1,0 +1,199 @@
+POSTACI 2.0.0 INSTALLATION
+--------------------------
+
+The most up-to-date information on installing Postaci can be found
+at http://www.postaciwebmail.org/
+
+***********************************************************************************
+SEE FAQ' s in this directory after completing setup. It also contains very important 
+issues about Postaci Webmail. 
+
+This document is for fresh installation only. If you are upgrading from a provious
+version please refer to the file called UPGRADE. 
+***********************************************************************************
+
+1. Information about the program
+
+Postaci is a PHP based POP3/IMAP based e-mail client. It can handle both protocols
+and the defaul protocol can be changed from a single configuration file. Postaci is
+platform independent. It can work on any operating system which PHP supports. Postaci
+is also database independent. It can handle with MySQL, mSQL, Microsoft SQL, Sybase,
+PostgreSQL. It uses very complicated database operations for handling with POP3 folder
+simulation. 
+
+Postaci is multilanguage. It currently supports Turkish, English, German, French, Portuguese, 
+Spanish, Polish, Norwegian, Dutch, Italian . If you want to see Postaci in your language just 
+translate one of the files in lang directory and send it to me. 
+
+Postaci includes multidomain(virtual) support. Domains are stored in a DB
+table and all users must be linked to a domain. It can be done at
+tblDomains and tblUsers tables at the database. If you have a single
+domain on your server you won' t need to do this. There must be at least
+one domain at the database and its index should be 1. This is the default
+domain for any user. You can change your default domain at the tblDomain.sql
+file at the queries folder.
+
+This software is distrubuted with GNU GPL license and you can find a copy with the package.
+
+This software is tested with real life positions but there should be at
+least a few bugs. You can report any kind of bug to
+"Umut Gökbayrak" <umut@trlinux.com>
+
+This software was developed on a Red Hat Linux system and tested with many
+conditions using PostgreSQL and MySQL databases.
+
+It uses IMAP c-client libraries which you can find a copy at
+ftp://ftp.onar.com.tr/pub/linux/console/php/c-client.tar.gz
+
+Any Pentium machine should be enough for the software to work but a
+P III or AMD K7 system with 128 M is recommended.
+
+-------------------------------------------------------
+
+2. Step by step Installation.
+Below, is an example for PHP + IMAP + Apache installation. If you want to use another database
+that Postaci supports, refer to your preferred databases' s documentation. If you need more assistance
+on installing PHP + Apache + c-client please see section 3.
+
+* Set up MySQL. (http://www.mysql.org)
+
+* Setup c-client to server.
+(http://www.postaciwebmail/downloads/c-client.tar.gz)
+
+* Setup Aspell (If you plan to use the spell check feature)
+(http://aspell.sourceforge.net/)
+
+* Setup PHP and apache. (PHP3 WON' T WORK...!!!) (http://www.php.net)
+
+* make sure the following lines exist in your httpd.conf file and uncommented.
+
+* IMPORTANT!!!!
+* Pay attention to the .inc extension!!!! It is a must for a secure environment.
+* IMPORTANT!!!!
+
+  AddType application/x-httpd-php .php .php3 .phtml .inc
+  AddType application/x-httpd-php-source .phps
+
+* Create a database for postaci. This can be done with the command "mysqladmin create postaci"
+
+* make sure the database name is the same at includes/global.inc file.
+
+* Create a temp folder for sending attachments. All the permissions should be the user nobody' This is the user which apacheruns as. use the following commands...
+
+	mkdir /tmp/postaci/
+  mkdir /tmp/postaci/send/
+  mkdir /tmp/postaci/store
+	chown nobody.nobody -R /tmp/postaci
+	chmod 770 -R /tmp/postaci
+
+* make sure the directory is correctly specified at the includes/global.inc file.
+
+* run the following command and create the necessary tables in the DB.
+
+	cd queries
+	mysql postaci < postaci-mysql-1.1.sql
+
+* insert the domains you like to the tblDomains.sql file in queries folder. The syntax is as follows.
+
+	INSERT INTO tblDomains VALUES (1,'trlinux.com');
+	INSERT INTO tblDomains VALUES (2,'test.com');
+
+* Insert the data for Domains to the DB with the following command.
+
+	mysql postaci < tblDomains.sql
+
+* Create a Database USER.
+
+	$ mysql postaci
+	mysql > grant usage on postaci.* to dbuser@localhost;
+	mysql > grant select,insert,delete,update on postaci.* to dbuser@localhost;
+	mysql > exit;
+	$ mysqladmin -u dbuser password "new password"
+
+* make sure the password is the same as "new password" in the includes/global.inc file.
+
+* put your postaci files to a reachable directory and point your browser to that URL.
+
+* thats all........
+
+-----------------------------------------------------------------------------
+
+3. Sample Php4 + c-clients + apache + MySQL setup
+
+If you haven' t installed PHP + Apache on your machine you can follow these easy steps
+to have a working server. Please don' t care about the version. This is just an exapmple
+script.
+
+# Setting up MySQL rpms
+
+	rpm -i MySQL-3.22.27-1.i386.rpm
+	rpm -i MySQL-client-3.22.27-1.i386.rpm
+	rpm -i MySQL-devel-3.22.27-1.i386.rpm
+
+# untar the packets.
+
+	tar zxvf apache_1.3.12.tar.gz
+	tar zxvf php-4.0.tar.gz
+	tar zxvf c-client.tar.gz
+
+# setup up c-client
+
+	cd imap-4.7
+  make slx
+	yes|cp c-client/c-client.a /usr/lib/c-client.a
+	yes|cp c-client/c-client.a /usr/lib/libc-client.a
+	yes|cp src/c-client/rfc822.h /usr/include
+	yes|cp src/c-client/mail.h	/usr/include
+	yes|cp c-client/linkage.h /usr/include
+	cd ..
+
+# preconfigure apache for php4
+
+	cd apache_1.3.12
+	./configure --prefix=/home/httpd
+	cd ..
+
+# configure php4
+
+	cd php-4.0
+	./configure --with-apache=../apache_1.3.12 --with-mysql --with-imap --enable-track-vars
+	make
+	make install
+	cd ..
+
+# compile apache
+
+	cd apache_1.3.12
+	./configure --prefix=/home/httpd --activate-module=src/modules/php4/libphp4.a
+	make
+	make install
+	cd ..
+
+# php.ini stuff
+	cd php-4.0
+	cp php.ini-dist /usr/local/lib/php.ini
+	// change the line like display_errors = On to Off at this file
+
+	pico /usr/local/lib/php.ini
+
+# Installing Aspell
+        cd aspell-0.60.1
+        ./configure && make
+        make install
+
+----------------------------------------------------------------------------------
+
+Hope you like it. Any kind of feedback is welcome.
+
+Pete Larsen
+pete@postaciwebmail.org
+http://www.postaciwebmail.org
+
+or
+
+Umut  Gokbayrak
+umut@trlinux.com
+http://www.trlinux.com
+
+Postaci is a free software (GPL) sponsored by YimpasNet (http://www.yimpas.net.tr) and CemreNet (http://www.cemre.net)
+-------------------------------------------------------------------------------------------------------------------------

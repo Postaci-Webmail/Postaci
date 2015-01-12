@@ -1,0 +1,94 @@
+WHAT' S NEW
+
+*************
+VERSION 2.0.0
+*************
+1. Added a spellcheck feature
+2. Added an addressbook window to the sendmail page
+3. Added more options to the userpreference page and also the globals.inc file
+4. Postaci will now calculate the size of messages that are sent
+5. Passwords are no longer be stored in the database
+6. A new function has been added to prevent SQL injection attacks
+7. Added ability to send to multiple users using POP3
+8. Added ability to send using cc and bcc using POP3
+9. Fixed problems adding, renaming, and deleting folders
+10.Fixed problems adding, moving, and deleting messages
+11.Made it so that the message size is stored in the database when you
+move messages
+12.Made it easier to customize the colors of Postaci
+
+*************
+VERSION 1.1.3
+*************
+1. Added Polish and Spanish support
+2. Fixed the infamous attachments bug
+3. Fixed some problems with Courier-IMAP servers
+4. Some minor bugfixes. 
+
+*************
+VERSION 1.1.2
+*************
+1. Added Norwegian and French support
+2. Some more minor bugfixes
+
+*************
+VERSION 1.1.1
+*************
+1. Fixed a security hole that allowed others to read unauthorized mailboxes. 
+2. Some more minor bugfixes
+3. Added FAQ and documented the global.inc file. 
+4. Added support for German, Italian, Dutch, Portuguese
+5. It works on Windows machines less troubly. (At least it should)
+6. Added support for Qmail/vpop users. 
+
+*************
+VERSION 1.1.0
+*************
+
+1. Database Independency
+   Postaci 1.1.0 uses an interface class to handle database connections. It is fast and efficient.
+   As this version it currently supports :
+
+   MySQL
+   PostgreSQL
+   Sybase
+   mSQL
+   Microsoft SQL
+
+   Interbase, Oracle, Informix support is in the TO DO List.
+
+2. Protocol Independency
+   Postaci 1.1.0 can handle both POP3 and IMAP standarts. If IMAP support is selected during setup
+   it will use real IMAP folders that is stored at the users' home directory. If POP3 support is
+   enabled, because POP3 doesn' t provide folder support it will simulate it by using database tables
+   and store the e-mail in the database, whatever engine it is.
+
+3. A frameless, completely new user interface
+   Postaci 1.1.0 is very much different than Postaci 1.0.x series in the users' view. The user interface
+   was written from strach.
+
+4. Object Oriented Programming
+   Postaci Webmail' s source code was written from strach to support Object Oriented Programming skills.
+
+5. Session Support
+   Postaci 1.1.0 is programmed to work only with PHP4 because it uses built-in session support from PHP4.
+   IT WILL NOT WORK WITH PHP3!!!.
+
+6. Platform Independeny
+   Postaci 1.1.0 doesn' t use any native code. So it should work on any architecture and any operating
+   system which PHP supports.
+
+7. Tens of improvements and bug fixes.
+   Postaci 1.1.0 is a work derived from the feedbacks. Nearly all most wanted feautures are included in this
+   release.
+
+8. Remote SMTP and POP3/IMAP support
+   Postaci 1.1.0 can fetch and send mail from/through remote servers. You don' t need to set up e-mail, http,
+   pop3/imap server on the same machine any more....
+
+9. Better support for virtual domains.
+   As from version 1.0.0, Postaci can handle with as many domain names as you want.
+
+10. Better localization support
+   Version 1.1.0 uses plain text files for localization. It is simpler to translate it to any other language.
+

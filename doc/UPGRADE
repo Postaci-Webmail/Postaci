@@ -1,0 +1,72 @@
+/***************************************************************************************/
+/*   This instructions are for MySQL users only. ýf you use anoher DB. Please          */
+/*   edit the queries at queries/upgrade/ folder for your database engine' s sytax     */
+/*   follow the same instructions.                                                     */
+/***************************************************************************************/ 
+
+****************************************************************************************
+
+Upgrading From 1.0.x
+====================
+
+Postaci 1.0.x series were not designed to multidatabase compatible. It was just a POP3 compliant webmail 
+client and stored the e-mail in a MySQL database. 1.1.x series are completely different in design so it is
+almost impossible to upgrade to 1.1.x without loosing some data. Sorry, you have to install latest version 
+because 1.0.x series will no longrer maintained. 
+
+Upgrading from 1.1.0
+====================
+
+STEP 1 : 
+Simply run the query called upgrade-mysql-1.1.0-1.1.2.sql at the queries/upgrade/ folder with the command : 
+
+mysql postaci < upgrade-mysql-1.1.0-1.1.3.sql
+
+where postaci is your database name. ýf it says that you are not authorized to do that run it with suppliying a -p 
+parameter:
+
+mysql postaci -p < upgrade-mysql-1.1.0-1.1.3.sql
+
+If it complains about anonymous acces is not allowed than run the query with -u specifiying your root users. 
+
+mysql postaci -u root -p < upgrade-mysql-1.1.0-1.1.3.sql
+
+STEP 2 : 
+Overwrite the new version on to the old one. 
+
+STEP 3 : 
+Edit the global.inc file carefully, specify the database user and password and so on. 
+
+
+Upgrading from 1.1.1
+====================
+
+STEP 1 : 
+Simply run the query called upgrade-mysql-1.1.0-1.1.2.sql at the queries/upgrade/ folder with the command : 
+
+mysql postaci < upgrade-mysql-1.1.1-1.1.2.sql
+
+where postaci is your database name. ýf it says that you are not authorized to do that run it with suppliying a -p 
+parameter:
+
+mysql postaci -p < upgrade-mysql-1.1.1-1.1.2.sql
+
+If it complains about anonymous acces is not allowed than run the query with -u specifiying your root users. 
+
+mysql postaci -u root -p < upgrade-mysql-1.1.1-1.1.2.sql
+
+STEP 2 : 
+Overwrite the new version on to the old one. 
+
+STEP 3 : 
+Edit the global.inc file carefully, specify the database user and password and so on. 
+
+
+Upgrading from 1.1.2
+====================
+
+STEP 1 : 
+Overwrite the new version on to the old one. 
+
+STEP 2 : 
+Edit the global.inc file carefully, specify the database user and password and so on. 
