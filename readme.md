@@ -1,6 +1,10 @@
 # Postaci Webmail
 Postaci (Turkish for Postman) is multiplatform Webmail software which is database independent, multilanguage, POP3/IMAP, and fully MIME-compatible. While using POP3 mode to fetch messages it uses database fields to simulate IMAP folders, on which you can save, move, delete, and read e-mail. It also contains an adressbook, a notebook, and a bookmark manager application.
 
+Version 3.0 will be a full overhaul with a beautiful new design.  Here is a sneak peek:
+
+<img src="http://i.imgur.com/MxF0QXB.png"/>
+
 ### Recent releases
 
 **2.0.1 01 Oct 2006 19:24**
