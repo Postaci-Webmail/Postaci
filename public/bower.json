@@ -1,0 +1,32 @@
+{
+  "name": "postaci-client",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Postaci-Webmail/postaci",
+  "authors": [
+    "Marshall Thompson <marshall@creativeideal.net>"
+  ],
+  "description": "Postaci Webmail Client App",
+  "keywords": [
+    "webmail"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "canjs": "~2.1.4",
+    "steal": "~0.4.0",
+    "canjs-feathers": "~0.2.0",
+    "accounting.js": "~0.3.2",
+    "momentjs": "~2.9.0",
+    "bootstrap-material-design": "~0.2.1",
+    "codemirror": "~4.11.0",
+    "socket.io-client": "~1.2.1"
+  }
+}
