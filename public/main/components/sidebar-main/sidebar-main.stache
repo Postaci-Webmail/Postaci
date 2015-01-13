@@ -9,3 +9,4 @@
   <button class="btn"><i class="mdi-content-send"></i></button>
   <button class="btn"><i class="mdi-file-folder"></i></button>
 </div>
+<div class="logo bottom"><span>Postaci</span></div>

@@ -50,7 +50,25 @@ sidebar-main button.btn:hover{
   color:white;
 }
 sidebar-main button.btn.active{
-  color:gray;
+  color:#555;
   background:#FFF;
   border:solid 1px #7f007f;
+}
+
+sidebar-main .logo{
+  content:'Postaci';
+  font-family: 'Times';
+  font-style: italic;
+  color: #843EB0;;
+  position: absolute;
+  bottom: 16px;
+  opacity: 0.4;
+}
+sidebar-main .logo:hover{
+  opacity:1;
+  cursor:pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }

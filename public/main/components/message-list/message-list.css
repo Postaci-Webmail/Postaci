@@ -10,6 +10,29 @@ message-list {
 message-list .nav-tabs .glyphicon:not(.no-margin) {
 	margin-right: 10px;
 }
+message-list .tools{
+	border-top:solid 1px #EEE;
+	position: relative;
+}
+message-list .tools button.btn{
+	border-radius:0;
+}
+message-list .tools .counter{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 32px;
+	text-align: center;
+	padding-top:6px;
+	right: 64px;
+}
+message-list .paging span{
+	position:relative;
+	top:2px;
+}
+message-list .paging button.btn{
+	padding:7px 10px;
+}
 message-list .message{
 	height:100px;
 	position: relative;
@@ -19,10 +42,14 @@ message-list .message{
 	background-color: #fff;
 	border-top: 1px solid #ddd;
 	cursor: pointer;
-	border-top:solid 2px transparent;
+	border-top:solid 2px #EEE;
 	border-bottom:solid 3px transparent;
 	border-left:solid 2px transparent;
 	border-right:solid 2px transparent;
+	-webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
 }
 message-list .message.active{
 	border-top:solid 2px #7b00c9;
@@ -30,11 +57,17 @@ message-list .message.active{
 	border-left:solid 2px #7b00c9;
 	border-right:solid 2px #7b00c9;
 }
+message-list .message.active .icons{
+	opacity: 1;
+}
 message-list .message:not(.active):hover{
 	border-top:solid 2px #e0aeff;
 	border-bottom:solid 3px #e0aeff;
 	border-left:solid 2px #e0aeff;
 	border-right:solid 2px #e0aeff;
+}
+message-list .message:not(.active):hover .star{
+	opacity: 1;
 }
 message-list .message .icons{
 	position: absolute;
@@ -49,33 +82,22 @@ message-list .message .icons{
 	border-right:none !important;
 	border-left:none !important;
 	color:#CCC;
+	-webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
 }
-message-list .message .name{
-
+message-list .message .star{
+	opacity: 0;
+	-webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
 }
 message-list .message .subject{
 	font-weight:500;
 	font-size:15px;
 }
-message-list .message:first-child {
-	border-top-right-radius: 0px;
-	border-top-left-radius: 0px;
-}
-message-list .message:last-child {
-	border-bottom-right-radius: 0px;
-	border-bottom-left-radius: 0px;
-}
-message-list a.message.read {
-	color: #222;
-	background-color: #F3F3F3;
-}
-message-list .ad a.title {
-	color: #15C;
-	text-decoration: none;
-	font-weight: bold;
-	font-size: 110%;
-}
-message-list .ad a.url {
-	color: #093;
-	text-decoration: none;
+message-list button.btn-default{
+	border:none;
 }

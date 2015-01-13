@@ -1,0 +1,112 @@
+message-toolbar{
+	position: absolute;
+	top:19px;
+	left:0;
+	display:block;
+	width:100%;
+	padding:0 16px 0 16px;
+}
+message-toolbar .group{
+  display:inline-block;
+  margin-right:16px;
+}
+message-toolbar .group:last-child{
+  display:inline-block;
+  margin-right:0px;
+}
+message-toolbar button.btn.attachments{
+	margin-left:6%;
+  background:#EEE;
+  color:#AD88C5;
+  font-weight: bold;
+}
+message-toolbar button.btn{
+  border-radius:100%;
+  height:42px;
+  width:42px;
+  font-size:28px;
+  padding:2px 6px;
+  color:#DDD;
+  background:none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+message-toolbar button.btn:hover{
+  background:#7f007f;
+  color:white;
+}
+message-toolbar button.btn.active{
+  color:gray;
+  background:#FFF;
+  border:solid 1px #7f007f;
+}
+
+message-toolbar .button-drop{
+	width:42px;
+	position: relative;
+	display:inline-block;
+	border-radius:21px;
+	min-height:26px;
+	z-index:100;
+}
+message-toolbar .button-drop > .btn{
+	z-index: 200;
+	position: absolute;
+}
+message-toolbar .button-drop-group{
+	width:42px;
+	height:0px;
+	overflow:hidden;
+	position:absolute;
+	top:0;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	opacity:0;
+}
+message-toolbar .button-drop:hover .button-drop-group{
+	opacity:1;
+	height:100px;
+	top:42px;
+}
+message-toolbar .button-drop .button-drop-group .btn.reply-all{
+	position: absolute;
+	z-index: 160;
+	top:0;
+}
+message-toolbar .button-drop .btn.forward{
+	position: absolute;
+	z-index: 150;
+	bottom:0;
+}
+message-toolbar .button-drop:hover .btn{
+	background:#D583D5;
+}
+message-toolbar .button-drop:hover .btn:hover{
+	background:#7f007f;
+}
+message-toolbar .button-drop-group .btn{
+	display:block;
+	margin:8px 0 0;
+}
+
+message-toolbar .logo{
+  content:'Postaci';
+  font-family: 'Times';
+  font-style: italic;
+  color: #843EB0;;
+  position: absolute;
+  bottom: 16px;
+  opacity: 0.4;
+}
+message-toolbar .logo:hover{
+  opacity:1;
+  cursor:pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}

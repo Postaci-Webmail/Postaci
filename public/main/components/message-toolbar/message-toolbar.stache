@@ -1,0 +1,19 @@
+<div class="group">
+  <button class="btn fullscreen"><i class="mdi-navigation-fullscreen"></i></button>
+</div>
+
+<button class="btn attachments"><i class="mdi-editor-attach-file"></i></button>
+
+<div class="group pull-right">
+
+	<div class="button-drop">
+	  <button class="btn"><i class="mdi-content-reply"></i></button>
+		<div class="button-drop-group">
+		  <button class="btn reply-all"><i class="mdi-content-reply-all"></i></button>
+		  <button class="btn forward"><i class="mdi-content-forward"></i></button>
+		</div>
+  </div>
+
+	<button class="btn"><i class="mdi-content-archive"></i></button>
+	<button class="btn"><i class="mdi-action-delete"></i></button>
+</div>

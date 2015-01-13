@@ -10,7 +10,7 @@ account-menu button.btn{
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-  color:#BBB;
+  color:#777;
 }
 account-menu button.btn:hover{
   border:solid 1px lightgray;

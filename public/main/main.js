@@ -16,6 +16,7 @@ import 'components/message-list/message-list';
 import 'components/message-view/message-view';
 import 'components/account-menu/account-menu';
 import 'components/message-search/message-search';
+import 'components/message-toolbar/message-toolbar';
 
 import 'components/task-module/task-module';
 import 'components/todo-module/todo-module';

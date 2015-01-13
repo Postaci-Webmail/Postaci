@@ -1,8 +1,6 @@
+<message-toolbar></message-toolbar>
+
 <div class="message">
-  <div class="icons">
-    <span class="glyphicon glyphicon-star-empty"></span>
-    <span class="glyphicon glyphicon-paperclip"></span>
-  </div>
   <div class="name">
     <span class="name">Pete Larsen</span>
     <span class="pull-right text-muted">12:10 AM</span>
