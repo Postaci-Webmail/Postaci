@@ -1,25 +1,19 @@
-## Laravel PHP Framework
+# Postaci Webmail
+Postaci (Turkish for Postman) is multiplatform Webmail software which is database independent, multilanguage, POP3/IMAP, and fully MIME-compatible. While using POP3 mode to fetch messages it uses database fields to simulate IMAP folders, on which you can save, move, delete, and read e-mail. It also contains an adressbook, a notebook, and a bookmark manager application.
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+### Recent releases
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+**2.0.1 01 Oct 2006 19:24**
+Release Notes: SMTP authentication for those who need to authenticate to send email. An Email Address field in Preferences allows you to manually set your From: email address. A problem in moving messages when using IMAP has been fixed.
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+**2.0 20 Mar 2006 02:03**
+Pete Larsen is maintaining the project from now on. A spell check feature and an address book window have been added to the sendmail page. Passwords will no longer be stored in the database. SQL injection attacks are prevented. Problems adding, renaming, and deleting folders and problems adding, moving, and deleting messages have been fixed. The message size is stored in the database when you move messages. It is easier to customize the colors. There are numerous enhancements.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+**1.1.3 07 Nov 2000 16:39**
+Release Notes: The infamous attachments bug was fixed. Some problems with Courier-IMAP servers were fixed, and some minor bugfixes were made. Polish and Spanish support was added.
 
-## Official Documentation
+**1.1.2 04 Nov 2000 20:35**
+Release Notes: This release adds French and Norwegian support and some minor bugfixes.
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
-
-### Contributing To Laravel
-
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+**1.1.1 31 Oct 2000 09:13**
+Release Notes: A severe security hole has been fixed, and minor bugfixes were added. An FAQ and global.inc file documentation were included. Translations are provided for German, Italian, Dutch, and Portuguese. Support for Qmail/vpop users has been added.
