@@ -1,0 +1,81 @@
+message-list {
+	position: fixed;
+	top: 0;
+	bottom:0;
+	left: 80px;
+	width: 390px;
+	padding-top:80px;
+	border-right:solid 1px lightgray;
+}
+message-list .nav-tabs .glyphicon:not(.no-margin) {
+	margin-right: 10px;
+}
+message-list .message{
+	height:100px;
+	position: relative;
+	display: block;
+	padding: 10px 15px 0 32px;
+	margin-bottom: -1px;
+	background-color: #fff;
+	border-top: 1px solid #ddd;
+	cursor: pointer;
+	border-top:solid 2px transparent;
+	border-bottom:solid 3px transparent;
+	border-left:solid 2px transparent;
+	border-right:solid 2px transparent;
+}
+message-list .message.active{
+	border-top:solid 2px #7b00c9;
+	border-bottom:solid 3px #7b00c9;
+	border-left:solid 2px #7b00c9;
+	border-right:solid 2px #7b00c9;
+}
+message-list .message:not(.active):hover{
+	border-top:solid 2px #e0aeff;
+	border-bottom:solid 3px #e0aeff;
+	border-left:solid 2px #e0aeff;
+	border-right:solid 2px #e0aeff;
+}
+message-list .message .icons{
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	width:32px;
+	font-size:20px;
+	text-align: center;
+	padding-top:9px;
+	line-height: 30px;
+	border-right:none !important;
+	border-left:none !important;
+	color:#CCC;
+}
+message-list .message .name{
+
+}
+message-list .message .subject{
+	font-weight:500;
+	font-size:15px;
+}
+message-list .message:first-child {
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+message-list .message:last-child {
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+message-list a.message.read {
+	color: #222;
+	background-color: #F3F3F3;
+}
+message-list .ad a.title {
+	color: #15C;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 110%;
+}
+message-list .ad a.url {
+	color: #093;
+	text-decoration: none;
+}

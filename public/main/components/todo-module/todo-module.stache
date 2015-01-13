@@ -1,0 +1,15 @@
+{{#todo}}
+<form can-submit="saveTodo">
+<input type="text" placeholder="description" can-value="description"><button>Save</button>
+</form>
+{{/todo}}
+
+<div>
+{{#each todos}}
+  <span contenteditable
+  	can-value="description"
+  	can-blur="updateTodo"
+  	can-keypress="noNewline">
+  	</span> <a class="pull-right" can-click="deleteTodo">x</a><br/>
+{{/each}}
+</div>

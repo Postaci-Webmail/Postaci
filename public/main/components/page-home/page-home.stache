@@ -1,0 +1,5 @@
+{{#appState}}
+<sidebar-main></sidebar-main>
+<message-list></message-list>
+<message-view></message-view>
+{{/appState}}

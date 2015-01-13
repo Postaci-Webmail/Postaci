@@ -1,0 +1,10 @@
+<div class="group">
+  <button class="btn add"><i class="mdi-content-add"></i></button>
+</div>
+<div class="group">
+  <button class="btn"><i class="mdi-content-inbox"></i></button>
+  <button class="btn"><i class="mdi-action-grade"></i></button>
+  <button class="btn"><i class="mdi-content-drafts"></i></button>
+  <button class="btn"><i class="mdi-content-send"></i></button>
+  <button class="btn"><i class="mdi-file-folder"></i></button>
+</div>

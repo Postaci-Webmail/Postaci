@@ -1,0 +1,15 @@
+{{#task}}
+<form can-submit="saveTask">
+<input type="text" placeholder="description" can-value="description"><button>Save</button>
+</form>
+{{/task}}
+
+<div>
+{{#each tasks}}
+  <span contenteditable
+  	can-value="description"
+  	can-blur="updateTask"
+  	can-keypress="noNewline">
+  	</span> <a class="pull-right" can-click="deleteTask">x</a><br/>
+{{/each}}
+</div>

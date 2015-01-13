@@ -1,0 +1,72 @@
+<!-- Split button -->
+<div class="btn-group">
+  {{! <button type="button" class="btn btn-default">
+    <div class="checkbox" style="margin: 0;">
+      <label>
+        <input type="checkbox">
+      </label>
+    </div>
+  </button> }}
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span><span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">All</a></li>
+    <li><a href="#">None</a></li>
+    <li><a href="#">Read</a></li>
+    <li><a href="#">Unread</a></li>
+    <li><a href="#">Starred</a></li>
+    <li><a href="#">Unstarred</a></li>
+  </ul>
+</div>
+<div class="pull-right">
+    <span class="text-muted"><b>1</b>–<b>50</b> of <b>277</b></span>
+    <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </button>
+        <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+    </div>
+</div>
+
+
+    <div class="message active">
+      <div class="icons">
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <span class="glyphicon glyphicon-paperclip"></span>
+      </div>
+      <div class="name">
+        <span class="name">Pete Larsen</span>
+        <span class="pull-right text-muted">12:10 AM</span>
+      </div>
+      <div class="subject">How is the work on the one thing coming along?</div>
+      <span class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
+    </div>
+
+    <div class="message">
+      <div class="icons">
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <span class="glyphicon glyphicon-paperclip"></span>
+      </div>
+      <div class="name">
+        <span class="name">Pete Larsen</span>
+        <span class="pull-right text-muted">12:10 AM</span>
+      </div>
+      <div class="subject">I would like to buy three monkeys.</div>
+      <span class="text-muted">Hey, do you still have those three monkeys in stock?  I was thinking I would get them for my kids.</span>
+    </div>
+
+    <div class="message unread">
+      <div class="icons">
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <span class="glyphicon glyphicon-paperclip"></span>
+      </div>
+      <div class="name">
+        <span class="name">Pete Larsen</span>
+        <span class="pull-right text-muted">12:10 AM</span>
+      </div>
+      <div class="subject">Tienes Fuego</div>
+      <span class="text-muted">No really, do you have fire?</span>
+    </div>

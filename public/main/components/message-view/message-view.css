@@ -1,0 +1,54 @@
+message-view {
+	position: fixed;
+	top: 0;
+	bottom:0;
+	left: 470px;
+	right: 0;
+	border-right:solid 1px lightgray;
+	font-size:18px;
+	padding:80px 24px 24px 2px;
+}
+message-view .nav-tabs .glyphicon:not(.no-margin) {
+	margin-right: 10px;
+}
+message-view .message{
+	height:100px;
+	position: relative;
+	display: block;
+	padding: 10px 15px 0 52px;
+	margin-bottom: -1px;
+	background-color: #fff;
+}
+message-view .message .icons{
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	width:52px;
+	font-size:26px;
+	text-align: center;
+	padding-top:9px;
+	line-height: 30px;
+	border-right:none !important;
+	border-left:none !important;
+	color:#CCC;
+}
+message-view .message .name{
+	margin-bottom:6px;
+	color:#7b00c9;
+}
+message-view .message .subject{
+	font-weight:500;
+	font-size:22px;
+	margin-bottom:16px;
+}
+message-view .ad a.title {
+	color: #15C;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 110%;
+}
+message-view .ad a.url {
+	color: #093;
+	text-decoration: none;
+}
