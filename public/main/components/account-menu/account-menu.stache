@@ -1,0 +1,10 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    marshall@creativeideal.net <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">marshall.thompson@me.com</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Settings</a></li>
+  </ul>
+</div>

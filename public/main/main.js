@@ -14,6 +14,8 @@ import 'components/page-home/page-home';
 import 'components/sidebar-main/sidebar-main';
 import 'components/message-list/message-list';
 import 'components/message-view/message-view';
+import 'components/account-menu/account-menu';
+import 'components/message-search/message-search';
 
 import 'components/task-module/task-module';
 import 'components/todo-module/todo-module';

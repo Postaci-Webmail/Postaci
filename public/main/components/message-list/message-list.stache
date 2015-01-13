@@ -1,4 +1,6 @@
-<!-- Split button -->
+<account-menu></account-menu>
+<message-search></message-search>
+
 <div class="btn-group">
   {{! <button type="button" class="btn btn-default">
     <div class="checkbox" style="margin: 0;">

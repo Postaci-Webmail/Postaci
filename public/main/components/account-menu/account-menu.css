@@ -1,0 +1,18 @@
+account-menu{
+  position:absolute;
+  top:18px;
+  left:0;
+}
+account-menu button.btn{
+  border:solid 1px transparent;
+  border-radius:0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  color:#BBB;
+}
+account-menu button.btn:hover{
+  border:solid 1px lightgray;
+  color:#7b00c9;
+}

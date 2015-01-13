@@ -1,0 +1,29 @@
+message-search{
+  position: absolute;
+  top:20px;
+  right:8px;
+}
+message-search button.btn{
+  border-radius:100%;
+  height:42px;
+  width:42px;
+  font-weight: bold;
+  font-size:28px;
+  padding:2px 6px;
+  margin-bottom:5px;
+  color:lightgray;
+  background:none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+message-search button.btn:hover{
+  background:#7f007f;
+  color:white;
+}
+message-search button.btn.active{
+  color:gray;
+  background:#FFF;
+}
